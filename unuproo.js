@@ -106,7 +106,7 @@ async function jugar() {
 
       }
       // de preferencia con una funcion como la de cardValidation
-       if (esComodin(cardsPlayers[player].splice(cardIndex, 1)[0])) {
+      else if (esComodin(cardsPlayers[player].splice(cardIndex, 1)[0])) {
         // si la carta es un comodin agregarla al trash y
         trash.push(cardsPlayers[player].splice(cardIndex, 1)[0]);
         // quitarla del jugador
