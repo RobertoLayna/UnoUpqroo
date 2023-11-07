@@ -1,16 +1,15 @@
 
-function changeColor(card, newColor) {
-
-    card.color = newColor; 
-    return card;
-
+function changeColor(/* carta */, /* colores */) {
+    // Recibir carta
+    // preguntarle al usuario que color escoger
+    // cambiar el color 
+    // Regresar la carta con la actualizacion 
+    // del color seleccionado
 }
-var newColor = rl.question("Ingrese el nuevo color: ");
-var cardToChange = trash[0];
-var changedCard = changeColor(cardToChange, newColor);
-console.log("Carta cambiada de color: ", changedCard);
+// Modificar este codigo para que reciba el arreglo de colores y 
+// los muestre como opciones
+// el color seleccionado debe ser el nuevo valor para 
+// card.color, regresar esa carta
 
-
-console.log("Mazo: ", trash);
 
 module.exports = changeColor
