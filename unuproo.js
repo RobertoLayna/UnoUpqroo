@@ -92,13 +92,20 @@ async function jugar() {
       // validar la carta con nuestra funcion cardValidation()
       // Validar si la carta se puede usar
       if (cardValidation(cardsPlayers[player][cardIndex])) {
-        // si es valida end = true
+        // Validar si la carta es una carta especial
+        if () {//+2 
+          // Si es carta especial validar de que tipo (+2, reversa o bloqueo)
+          // se aplica el castigo al sig jugador
+        } else if () {//Bloqueo
+
+        } else if () {// Reversa
+
+        }
         // se agrega a trash y se remueve del jugador
         trash.push(cardsPlayers[player].splice(cardIndex, 1)[0]);
         // el turno termina y se pasa al sig jugador mediante el while automaticamente
         end = true;
       }
-      // 25 min
       // Validar si la carta es un comodin
       // de preferencia con una funcion como la de cardValidation
        else if () { 
