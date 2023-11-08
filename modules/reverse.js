@@ -24,6 +24,4 @@ function cardReverse(totalPlayers, actualPlayer, isReverse) {
   return {actualPlayer, nextPlayer: `player_${nextPlayer}`, isReverse}
 }
 
-console.log(cardReverse(4, "player_3", false))
-
 module.exports = cardReverse
