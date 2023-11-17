@@ -97,7 +97,9 @@ async function jugar() {
       // Validar si la carta se puede usar
       const reverseResult = cardReverse(players, player, isReverse);
       // {actualPlayer: 'player_3', nextPlayer: `player_0`, isReverse: false}
-      if (cardValidation(cardsPlayers[player][cardIndex])) {
+      if (result.number === "+1") {
+        cardsPlayers[player].push(deck.shift());
+      } else if (cardValidation(cardsPlayers[player][cardIndex])) {
         // Validar si la carta es una carta especial
         if (cardsPlayers[player][cardIndex].number == "+2") {
           //+2
@@ -116,7 +118,7 @@ async function jugar() {
         trash.push(cardsPlayers[player].splice(cardIndex, 1)[0]);
         // el turno termina y se pasa al sig jugador mediante el while automaticamente
         end = true;
-        player = cardReverse(players, player, isReverse).nextPlayer
+        player = cardReverse(players, player, isReverse).nextPlayer;
       }
       // Validar si la carta es un comodin
       // de preferencia con una funcion como la de cardValidation
@@ -135,7 +137,7 @@ async function jugar() {
           cardsPlayers[player].splice(cardIndex, 1)[0];
           // Terminar turno
           end = true;
-          player = cardReverse(players, player, isReverse).nextPlayer
+          player = cardReverse(players, player, isReverse).nextPlayer;
         } else if (cardsPlayers[player][cardIndex].number == "+4") {
           // Agregarle 4 cartas al sig jugador
           // pushar 4 cartas al jugador sig
@@ -154,7 +156,7 @@ async function jugar() {
           cardsPlayers[player].splice(cardIndex, 1)[0];
           // Terminar turno
           end = true;
-          player = cardReverse(players, player, isReverse).nextPlayer
+          player = cardReverse(players, player, isReverse).nextPlayer;
         }
       }
       // el while authmaticamente reinicia a el principio
@@ -173,9 +175,9 @@ async function jugar() {
 //Si color o numero coincide ✅
 //Si es comodin (CC) ✅
 //Si es comodin (+4) ✅
-//Si es reversa
+//Si es reversa ✅
 //Si es bloqueo
-//Si es +2
+//Si es +2 ✅
 // Comer carta si no tengo
 // Comer si no dice "uno"
 // Decir "uno"

@@ -4,12 +4,8 @@ function changeColor(card, colors) {
   console.log("colores:", colors);
   // Recibir carta
   // preguntarle al usuario que color escoger
-  const selectedColor = rl.question("escoje un color: ", {
-    limit: colors,
-    limitMessage:
-      "Selección de color no válida. Elige entre los colores disponibles.",
-  });
-  card.color = selectedColor;
+  const selectedColor = rl.keyInSelect(colors, "escoje un color: ", {cancel: false});
+  card.color = colors[selectedColor];
   // cambiar el color
   // Regresar la carta con la actualizacion
   // del color seleccionado
